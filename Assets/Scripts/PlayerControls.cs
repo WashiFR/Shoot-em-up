@@ -20,7 +20,7 @@ public class PlayerControls : MonoBehaviour
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        if(Input.GetKey(KeyCode.Space) && delay > delayBeforeShoot)
+        if(Input.GetKey(KeyCode.Space) && delay > delayBeforeShoot && !GameOver.instance.gameIsOver)
         {
             Shoot();
         }

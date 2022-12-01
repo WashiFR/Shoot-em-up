@@ -202,6 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 0
   playerMaxHealth: 3
+  playerHealthText: {fileID: 0}
 --- !u!114 &8379317606532771720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,3 +217,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScore: 0
   playerHighScore: 0
+  playerScoreText: {fileID: 0}

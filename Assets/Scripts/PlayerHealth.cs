@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int playerHealth;
     public int playerMaxHealth;
+
+    public Image[] hearths;
+    public Sprite fullHearth;
+    public Sprite emptyHearth;
 
     public static PlayerHealth instance;
 
@@ -25,6 +30,27 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
+        for (int i = 0; i < hearths.Length; i++)
+        {
+            if (i < playerHealth)
+            {
+                hearths[i].sprite = fullHearth;
+            }
+            else
+            {
+                hearths[i].sprite = emptyHearth;
+            }
+
+            if (i < playerMaxHealth)
+            {
+                hearths[i].enabled = true;
+            }
+            else
+            {
+                hearths[i].enabled = false;
+            }
+        }
+
         if (playerHealth <= 0)
         {
             Death();
@@ -44,7 +70,5 @@ public class PlayerHealth : MonoBehaviour
         {
             PlayerScore.instance.playerHighScore = PlayerScore.instance.playerScore;
         }
-
-        Time.timeScale = 0;
     }
 }

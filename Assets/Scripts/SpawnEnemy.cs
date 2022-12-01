@@ -21,7 +21,7 @@ public class SpawnEnemy : MonoBehaviour
 
     void Update()
     {
-        if (delay > delayBeforeSpawn)
+        if (delay > delayBeforeSpawn && !GameOver.instance.gameIsOver)
         {
             SpawnEnemies();
         }

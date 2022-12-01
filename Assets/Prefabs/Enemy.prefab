@@ -182,10 +182,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   rb: {fileID: 2973025234917377822}
+  explosion: {fileID: 7949416353293502054, guid: 37975bd4359fa364da01c70b95a873e9, type: 3}
   bullet: {fileID: 4353977601659659082, guid: f65d0bedf7f527249b866455c003d6ea, type: 3}
   spawnBulletPos: {fileID: 2582093329482945651}
   points: 100
   delay: 0
-  minDelay: 200
-  maxDelay: 300
+  minDelay: 1000
+  maxDelay: 1500
   delayBeforeShoot: 0
