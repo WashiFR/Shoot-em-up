@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class Ennemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public float moveSpeed;
     public Rigidbody2D rb;
 
     public GameObject bullet;
     public GameObject spawnBulletPos;
+
+    public int points;
 
     public int delay = 0;
     public int minDelay;
@@ -15,14 +17,14 @@ public class Ennemy : MonoBehaviour
 
     private void Start()
     {
-        maxDelay = Random.Range(minDelay, maxDelay);
+        delayBeforeShoot = Random.Range(minDelay, maxDelay);
     }
 
     private void Update()
     {
         transform.position -= new Vector3(0, moveSpeed * Time.deltaTime);
 
-        if (delay > maxDelay)
+        if (delay > delayBeforeShoot)
         {
             Shoot();
         }
@@ -47,10 +49,12 @@ public class Ennemy : MonoBehaviour
     {
         delay = 0;
         Instantiate(bullet, new Vector3(spawnBulletPos.transform.position.x, spawnBulletPos.transform.position.y, 0), Quaternion.identity);
+        delayBeforeShoot = Random.Range(minDelay, maxDelay);
     }
 
     public void Death()
     {
         Destroy(gameObject);
+        PlayerScore.instance.AddPoints(points);
     }
 }

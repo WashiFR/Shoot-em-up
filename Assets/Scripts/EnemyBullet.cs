@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnnemyBullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     public float bulletSpeed;
 

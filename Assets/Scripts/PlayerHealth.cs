@@ -39,5 +39,12 @@ public class PlayerHealth : MonoBehaviour
     public void Death()
     {
         Destroy(gameObject);
+
+        if (PlayerScore.instance.playerScore > PlayerScore.instance.playerHighScore)
+        {
+            PlayerScore.instance.playerHighScore = PlayerScore.instance.playerScore;
+        }
+
+        Time.timeScale = 0;
     }
 }

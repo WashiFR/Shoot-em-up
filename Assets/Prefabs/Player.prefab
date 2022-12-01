@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2136210334062782025}
   - component: {fileID: 2136210334062782024}
   - component: {fileID: 2136210334062782029}
+  - component: {fileID: 8379317606532771720}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -184,6 +185,9 @@ MonoBehaviour:
   moveSpeed: 10
   rb: {fileID: 2136210334062782026}
   bullet: {fileID: 4353977601659659082, guid: 7ab03cbf265f2c0429067f99e0effed6, type: 3}
+  spawnBulletPos: {fileID: 559535695}
+  delay: 0
+  delayBeforeShoot: 100
 --- !u!114 &2136210334062782029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,3 +202,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 0
   playerMaxHealth: 3
+--- !u!114 &8379317606532771720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136210334062782023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 962a64d7602602245ab683661097adbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScore: 0
+  playerHighScore: 0

@@ -11,7 +11,7 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Limit"))
+        if (collision.gameObject.CompareTag("Limit") || collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
         }
