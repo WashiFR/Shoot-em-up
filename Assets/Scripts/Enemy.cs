@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public int health;
     public float moveSpeed;
     public Rigidbody2D rb;
     public bool isDead = false;
@@ -13,10 +14,10 @@ public class Enemy : MonoBehaviour
 
     public int points;
 
-    public int delay = 0;
-    public int minDelay;
-    public int maxDelay;
-    public int delayBeforeShoot;
+    public float delay = 0;
+    public float minDelay;
+    public float maxDelay;
+    public float delayBeforeShoot;
 
     private void Start()
     {
@@ -25,9 +26,14 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if(!isDead)
+        if(!isDead && !GameOver.instance.gameIsOver)
         {
             transform.position -= new Vector3(0, moveSpeed * Time.deltaTime);
+        }
+
+        if(health <= 0)
+        {
+            Death();
         }
 
         if (delay > delayBeforeShoot && !GameOver.instance.gameIsOver && !isDead)
@@ -35,19 +41,19 @@ public class Enemy : MonoBehaviour
             Shoot();
         }
 
-        delay++;
+        delay += Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Death();
+            TakeDamage();
             PlayerHealth.instance.TakeDamage();
         }
         else if (collision.gameObject.CompareTag("PlayerBullet"))
         {
-            Death();
+            TakeDamage();
         }
     }
 
@@ -58,13 +64,20 @@ public class Enemy : MonoBehaviour
         delayBeforeShoot = Random.Range(minDelay, maxDelay);
     }
 
+    public void TakeDamage()
+    {
+        health--;
+    }
+
     public void Death()
     {
         isDead = true;
         var death = Instantiate(explosion, transform.position, transform.rotation);
         death.Play();
+
         Destroy(gameObject);
         Destroy(death.gameObject, death.main.duration);
+
         PlayerScore.instance.AddPoints(points);
     }
 }

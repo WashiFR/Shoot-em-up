@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     public Sprite fullHearth;
     public Sprite emptyHearth;
 
+    public ParticleSystem deathExplosion;
+
     public static PlayerHealth instance;
 
     private void Awake()
@@ -64,7 +66,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void Death()
     {
+        var death = Instantiate(deathExplosion, transform.position, transform.rotation);
+        death.Play();
         Destroy(gameObject);
+        Destroy(death.gameObject, death.main.duration);
 
         if (PlayerScore.instance.playerScore > PlayerScore.instance.playerHighScore)
         {

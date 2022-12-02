@@ -6,7 +6,10 @@ public class EnemyBullet : MonoBehaviour
 
     void Update()
     {
-        transform.position -= new Vector3(0, bulletSpeed * Time.deltaTime);
+        if (!GameOver.instance.gameIsOver)
+        {
+            transform.position -= new Vector3(0, bulletSpeed * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

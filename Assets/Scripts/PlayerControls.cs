@@ -8,8 +8,8 @@ public class PlayerControls : MonoBehaviour
     public GameObject bullet;
     public GameObject spawnBulletPos;
     
-    public int delay = 0;
-    public int delayBeforeShoot;
+    public float delay = 0;
+    public float delayBeforeShoot;
 
     Vector2 movement;
 
@@ -25,7 +25,7 @@ public class PlayerControls : MonoBehaviour
             Shoot();
         }
 
-        delay++;
+        delay += Time.deltaTime;
     }
 
     public void Shoot()

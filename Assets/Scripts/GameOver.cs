@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class GameOver : MonoBehaviour
 {
@@ -28,6 +29,12 @@ public class GameOver : MonoBehaviour
     public void GameIsOver()
     {
         gameIsOver = true;
+        StartCoroutine(MyCoroutine());
+    }
+
+    IEnumerator MyCoroutine()
+    {
+        yield return new WaitForSeconds(PlayerHealth.instance.deathExplosion.main.duration);
         Time.timeScale = 0;
     }
 }

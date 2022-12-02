@@ -58,15 +58,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2973025234917377811}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 2.36, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: -1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1103466654981985933}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2973025234917377823
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -109,7 +109,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.627451, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -180,13 +180,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26144af1bdb0acf40bf014233772d005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 2
   moveSpeed: 2
   rb: {fileID: 2973025234917377822}
+  isDead: 0
   explosion: {fileID: 7949416353293502054, guid: 37975bd4359fa364da01c70b95a873e9, type: 3}
   bullet: {fileID: 4353977601659659082, guid: f65d0bedf7f527249b866455c003d6ea, type: 3}
   spawnBulletPos: {fileID: 2582093329482945651}
   points: 100
   delay: 0
-  minDelay: 1000
-  maxDelay: 1500
+  minDelay: 1
+  maxDelay: 3
   delayBeforeShoot: 0
