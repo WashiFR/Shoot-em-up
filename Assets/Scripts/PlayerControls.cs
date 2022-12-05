@@ -11,6 +11,8 @@ public class PlayerControls : MonoBehaviour
     public float delay = 0;
     public float delayBeforeShoot;
 
+    public AudioClip soundEffect;
+
     Vector2 movement;
 
     void Update()
@@ -32,5 +34,6 @@ public class PlayerControls : MonoBehaviour
     {
         delay = 0;
         Instantiate(bullet, new Vector3(spawnBulletPos.transform.position.x, spawnBulletPos.transform.position.y, 0), Quaternion.identity);
+        AudioManager.instance.PlayClipAt(soundEffect, transform.position);
     }
 }

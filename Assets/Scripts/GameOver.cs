@@ -29,6 +29,7 @@ public class GameOver : MonoBehaviour
     public void GameIsOver()
     {
         gameIsOver = true;
+        StartGame.instance.gameIsStarted = false;
         StartCoroutine(MyCoroutine());
     }
 

@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
 
     public ParticleSystem deathExplosion;
 
+    public GameObject gameOverMenu;
+
     public static PlayerHealth instance;
 
     private void Awake()
@@ -70,6 +72,8 @@ public class PlayerHealth : MonoBehaviour
         death.Play();
         Destroy(gameObject);
         Destroy(death.gameObject, death.main.duration);
+
+        gameOverMenu.SetActive(true);
 
         if (PlayerScore.instance.playerScore > PlayerScore.instance.playerHighScore)
         {

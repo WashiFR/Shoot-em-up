@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Enemy : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Enemy : MonoBehaviour
     public float minDelay;
     public float maxDelay;
     public float delayBeforeShoot;
+
+    public AudioClip soundEffect;
 
     private void Start()
     {
@@ -74,6 +77,8 @@ public class Enemy : MonoBehaviour
         isDead = true;
         var death = Instantiate(explosion, transform.position, transform.rotation);
         death.Play();
+
+        AudioManager.instance.PlayClipAt(soundEffect, transform.position);
 
         Destroy(gameObject);
         Destroy(death.gameObject, death.main.duration);
