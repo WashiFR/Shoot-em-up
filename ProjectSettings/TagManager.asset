@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - EnemyBullet
   - EnnemyBullet
+  - BoostHeal
+  - BoostShootSpeed
   layers:
   - Default
   - TransparentFX

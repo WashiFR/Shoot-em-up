@@ -59,6 +59,11 @@ public class PlayerHealth : MonoBehaviour
         {
             Death();
         }
+
+        if(playerHealth > playerMaxHealth)
+        {
+            playerHealth = playerMaxHealth;
+        }
     }
 
     public void TakeDamage()

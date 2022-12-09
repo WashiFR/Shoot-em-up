@@ -22,6 +22,8 @@ public class Enemy : MonoBehaviour
 
     public AudioClip soundEffect;
 
+    public GameObject[] boosts;
+
     private void Start()
     {
         delayBeforeShoot = Random.Range(minDelay, maxDelay);
@@ -72,11 +74,24 @@ public class Enemy : MonoBehaviour
         health--;
     }
 
+    public void SpawnBoost()
+    {
+        int random = Random.Range(0, 5);
+
+        if(random == 1)
+        {
+            Instantiate(boosts[Random.Range(0, boosts.Length)], new Vector3(spawnBulletPos.transform.position.x, spawnBulletPos.transform.position.y, 0), Quaternion.identity);
+        }
+    }
+
     public void Death()
     {
         isDead = true;
+
         var death = Instantiate(explosion, transform.position, transform.rotation);
         death.Play();
+
+        SpawnBoost();
 
         AudioManager.instance.PlayClipAt(soundEffect, transform.position);
 

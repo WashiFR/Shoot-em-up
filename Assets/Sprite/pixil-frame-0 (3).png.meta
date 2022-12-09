@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8efd0ea35fd8a654fb817a662bde71e3
+guid: 33746738ffb7f2941b62eb5cb485391b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HearthSprite_0
+      name: pixil-frame-0 (3)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,29 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f570f3cd2f245a4a9772ab12d6b6d43
-      internalID: 2089179866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HearthSprite_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b25132ba93deed14d98301df4d2b987c
-      internalID: -63410061
+      spriteID: f0ad0babf6f51db4da8f2e812c45dd50
+      internalID: -333445601
       vertices: []
       indices: 
       edges: []
@@ -169,8 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HearthSprite_1: -63410061
-      HearthSprite_0: 2089179866
+      pixil-frame-0 (3)_0: -333445601
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

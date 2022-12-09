@@ -193,8 +193,10 @@ MonoBehaviour:
   minDelay: 1e+13
   maxDelay: 1e+13
   delayBeforeShoot: 0
-  audioSource: {fileID: 8420403724450384229}
   soundEffect: {fileID: 8300000, guid: b625e639fd6118a4a8d5981b57ca4414, type: 3}
+  boosts:
+  - {fileID: 3654137592166324749, guid: 985cf87415e301f488ba6380a0813f58, type: 3}
+  - {fileID: 4403744546284411013, guid: cb194f5a3dfc7674d9d67d56e44b9b0a, type: 3}
 --- !u!82 &8420403724450384229
 AudioSource:
   m_ObjectHideFlags: 0

@@ -15,6 +15,19 @@ public class PlayerControls : MonoBehaviour
 
     Vector2 movement;
 
+    public static PlayerControls instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Plus d'une instance de PlayerControls dans la scène");
+            return;
+        }
+
+        instance = this;
+    }
+
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -28,6 +41,11 @@ public class PlayerControls : MonoBehaviour
         }
 
         delay += Time.deltaTime;
+
+        if(delayBeforeShoot < 0.1)
+        {
+            delayBeforeShoot = 0.1f;
+        }
     }
 
     public void Shoot()
