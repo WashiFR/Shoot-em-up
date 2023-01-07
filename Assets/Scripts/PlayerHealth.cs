@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
     public Image[] hearths;
     public Sprite fullHearth;
     public Sprite emptyHearth;
+
+    public bool isInvincible = false;
+    public SpriteRenderer graphics;
 
     public ParticleSystem deathExplosion;
 
@@ -68,7 +72,13 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage()
     {
-        playerHealth--;
+        if(!isInvincible)
+        {
+            playerHealth--;
+            isInvincible = true;
+            StartCoroutine(InvincibilityFlash());
+            StartCoroutine(InvincibilityDelay());
+        }
     }
 
     public void Death()
@@ -84,5 +94,22 @@ public class PlayerHealth : MonoBehaviour
         {
             PlayerScore.instance.playerHighScore = PlayerScore.instance.playerScore;
         }
+    }
+
+    public IEnumerator InvincibilityFlash()
+    {
+        while (isInvincible)
+        {
+            graphics.color = new Color(graphics.color.r, graphics.color.g, graphics.color.b, 0f);
+            yield return new WaitForSeconds(0.1f);
+            graphics.color = new Color(graphics.color.r, graphics.color.g, graphics.color.b, 1f);
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    public IEnumerator InvincibilityDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        isInvincible = false;
     }
 }

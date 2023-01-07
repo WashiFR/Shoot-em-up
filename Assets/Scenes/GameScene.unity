@@ -1343,7 +1343,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &642245328
 ParticleSystemRenderer:
@@ -7915,8 +7915,8 @@ MonoBehaviour:
   - {fileID: 2973025234917377811, guid: e4fd9805b45ecd44f8d6f2ecf21fa2ea, type: 3}
   - {fileID: 2973025234917377811, guid: c2611ed7e032b80489f07ceaa8114fb3, type: 3}
   - {fileID: 2973025234917377811, guid: 961960d3b7fe00e4f976654a925c9452, type: 3}
-  minPosX: -8
-  maxPosX: 8
+  minPosX: -7
+  maxPosX: 7
   minPosY: 6
   maxPosY: 10
   delay: 0
@@ -8146,6 +8146,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471083227}
   m_CullTransparentMesh: 1
+--- !u!212 &1482525101 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2136210334062782027, guid: fb0df6426664ac4479e09be036879964, type: 3}
+  m_PrefabInstance: {fileID: 2136210335739679440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1491235610
 GameObject:
   m_ObjectHideFlags: 0
@@ -8467,7 +8472,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1559527788
 ParticleSystemRenderer:
@@ -13803,7 +13808,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2136210334062782028, guid: fb0df6426664ac4479e09be036879964, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136210334062782028, guid: fb0df6426664ac4479e09be036879964, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136210334062782028, guid: fb0df6426664ac4479e09be036879964, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136210334062782028, guid: fb0df6426664ac4479e09be036879964, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2136210334062782028, guid: fb0df6426664ac4479e09be036879964, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13811,7 +13828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2136210334062782028, guid: fb0df6426664ac4479e09be036879964, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2136210334062782028, guid: fb0df6426664ac4479e09be036879964, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13845,6 +13862,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2136210334062782029, guid: fb0df6426664ac4479e09be036879964, type: 3}
+      propertyPath: graphics
+      value: 
+      objectReference: {fileID: 1482525101}
     - target: {fileID: 2136210334062782029, guid: fb0df6426664ac4479e09be036879964, type: 3}
       propertyPath: fullHearth
       value: 

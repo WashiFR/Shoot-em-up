@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Audio;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
@@ -24,9 +24,13 @@ public class Enemy : MonoBehaviour
 
     public GameObject[] boosts;
 
+    public Color32 currentColor;
+
     private void Start()
     {
         delayBeforeShoot = Random.Range(minDelay, maxDelay);
+
+        currentColor = GetComponent<SpriteRenderer>().color;
     }
 
     private void Update()
@@ -72,6 +76,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage()
     {
         health--;
+        StartCoroutine(FlashRoutine());
     }
 
     public void SpawnBoost()
@@ -99,5 +104,12 @@ public class Enemy : MonoBehaviour
         Destroy(death.gameObject, death.main.duration);
 
         PlayerScore.instance.AddPoints(points);
+    }
+
+    public IEnumerator FlashRoutine()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+        yield return new WaitForSeconds(0.1f);
+        gameObject.GetComponent<SpriteRenderer>().color = currentColor;
     }
 }

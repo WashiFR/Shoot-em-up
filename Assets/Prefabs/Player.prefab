@@ -214,7 +214,10 @@ MonoBehaviour:
   - {fileID: 0}
   fullHearth: {fileID: -161729138, guid: df9bbbe5a3c7c054cb47b023964a84fe, type: 3}
   emptyHearth: {fileID: -1737522901, guid: df9bbbe5a3c7c054cb47b023964a84fe, type: 3}
+  isInvincible: 0
+  graphics: {fileID: 0}
   deathExplosion: {fileID: 7949416353293502054, guid: d6b1a93e041d769438ba380248527614, type: 3}
+  gameOverMenu: {fileID: 0}
 --- !u!114 &8379317606532771720
 MonoBehaviour:
   m_ObjectHideFlags: 0

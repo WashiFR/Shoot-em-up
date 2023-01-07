@@ -4,6 +4,8 @@ public class BoostShootSpeed : MonoBehaviour
 {
     public float moveSpeed;
 
+    public AudioClip soundEffect;
+
     private void Update()
     {
         if (!GameOver.instance.gameIsOver)
@@ -16,6 +18,7 @@ public class BoostShootSpeed : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            AudioManager.instance.PlayClipAt(soundEffect, transform.position);
             PlayerControls.instance.delayBeforeShoot -= 0.05f;
             Destroy(gameObject);
         }

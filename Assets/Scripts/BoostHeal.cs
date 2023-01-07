@@ -4,6 +4,8 @@ public class BoostHeal : MonoBehaviour
 {
     public float moveSpeed;
 
+    public AudioClip soundEffect;
+
     private void Update()
     {
         if (!GameOver.instance.gameIsOver)
@@ -16,6 +18,7 @@ public class BoostHeal : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            AudioManager.instance.PlayClipAt(soundEffect, transform.position);
             PlayerHealth.instance.playerHealth++;
             Destroy(gameObject);
         }

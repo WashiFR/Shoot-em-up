@@ -197,6 +197,9 @@ MonoBehaviour:
   boosts:
   - {fileID: 3654137592166324749, guid: 985cf87415e301f488ba6380a0813f58, type: 3}
   - {fileID: 4403744546284411013, guid: cb194f5a3dfc7674d9d67d56e44b9b0a, type: 3}
+  currentColor:
+    serializedVersion: 2
+    rgba: 0
 --- !u!82 &8420403724450384229
 AudioSource:
   m_ObjectHideFlags: 0
